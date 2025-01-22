@@ -416,13 +416,13 @@ function App() {
           window.addEventListener('mousemove', (event) => {
               if (isDragging1) {
                   // Calculate mouse movement delta
-                  const deltaX = event.clientX - previousMousePosition1.x;
-                  const deltaY = event.clientY - previousMousePosition1.y;
+                  const deltaX = event.clientX - previousMousePosition.x;
+                const deltaY = event.clientY - previousMousePosition.y;
 
-                  // Apply rotation based on mouse movement
-                  const rotationSpeed = 0.005;
-                  camera.rotation.y -= deltaX * rotationSpeed; // Rotate around Y axis
-                  camera.rotation.x -= deltaY * rotationSpeed; // Rotate around X axis
+                // Apply camera translation based on mouse movement
+                const translationSpeed = 0.05; // Adjust this value for faster/slower translation
+                camera.position.x -= deltaX * translationSpeed; // Translate camera along X axis
+                camera.position.y += deltaY * translationSpeed; // Rotate around X axis
 
                   // Update the previous mouse position
                   previousMousePosition1 = { x: event.clientX, y: event.clientY };
