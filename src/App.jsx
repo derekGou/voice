@@ -379,7 +379,9 @@ function App() {
           let isDragging = false;
           let previousMousePosition = { x: 0, y: 0 };
           function onMouseDown(event) {
-            isDragging = true;
+            if (event.button === 1) { // Right-click (button 2)
+                isDragging = true;
+            }
           }
           function onMouseMove(event) {
             if (isDragging) {
@@ -396,6 +398,7 @@ function App() {
           }
           function onMouseUp() {
             isDragging = false;
+            isDragging1 = false;
           }
           // Add event listeners
           renderer.domElement.addEventListener('mousedown', onMouseDown);
@@ -427,11 +430,6 @@ function App() {
                   // Update the previous mouse position
                   previousMousePosition1 = { x: event.clientX, y: event.clientY };
               }
-          });
-
-          // Mouse up event to stop dragging
-          window.addEventListener('mouseup', () => {
-              isDragging1 = false;
           });
 
           // To prevent the context menu from showing up on right click
