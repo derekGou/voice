@@ -401,6 +401,16 @@ function App() {
           renderer.domElement.addEventListener('mousedown', onMouseDown);
           renderer.domElement.addEventListener('mousemove', onMouseMove);
           renderer.domElement.addEventListener('mouseup', onMouseUp);
+          window.addEventListener('wheel', (event) => {
+            if (event.deltaY > 0) {
+                camera.position.z += 1;  // Zoom out
+            } else {
+                camera.position.z -= 1;  // Zoom in
+            }
+        
+            // Clamp the camera's position to avoid going too far
+            camera.position.z = Math.max(1, Math.min(100, camera.position.z));
+        });
         }
         camera.position.z += 0.1;
         if (camera.position.z>=30){
