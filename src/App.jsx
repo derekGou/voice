@@ -379,7 +379,7 @@ function App() {
           let isDragging = false;
           let previousMousePosition = { x: 0, y: 0 };
           function onMouseDown(event) {
-            if (event.button === 1) { // Right-click (button 2)
+            if (event.button === 0) { // Right-click (button 2)
                 isDragging = true;
             }
           }
