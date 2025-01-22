@@ -224,7 +224,7 @@ function App() {
           animating=false
           runOnce = false
           const loader = new FontLoader();
-          loader.load('src/fonts/EB Garamond_Regular.json', (font) => {
+          loader.load('fonts/EB Garamond_Regular.json', (font) => {
             newText(font, pages3, 'Brief', 0.425, 0.4, 0.055)
             newText(font, pages3, 'Answers', 0.225, 0.1, 0.055)
             newText(font, pages3, 'to the Big', 0.175, -0.2, 0.055)
@@ -259,7 +259,7 @@ function App() {
           animating = false
           runOnce = false
           const loader = new FontLoader();
-          loader.load('src/fonts/EB Garamond_Regular.json', (font) => {
+          loader.load('fonts/EB Garamond_Regular.json', (font) => {
             newText(font, pages4, 'Nonfiction', 0.1, 0.25, 0.055)
             newText(font, pages4, 'or', 0.6, -0.05, 0.055)
             newText(font, pages4, 'Fiction?', 0.3, -0.35, 0.055)
@@ -278,7 +278,7 @@ function App() {
           animating = false
           runOnce = false
           const loader = new FontLoader();
-          loader.load('src/fonts/EB Garamond_Regular.json', (font) => {
+          loader.load('fonts/EB Garamond_Regular.json', (font) => {
             newText(font, pages5, 'Is time', 0.3, 0.25, 0.055)
             newText(font, pages5, 'travel', 0.36, -0.05, 0.055)
             newText(font, pages5, 'possible?', 0.2, -0.35, 0.055)
@@ -297,7 +297,7 @@ function App() {
           animating = false
           runOnce = false
           const loader = new FontLoader();
-          loader.load('src/fonts/EB Garamond_Regular.json', (font) => {
+          loader.load('fonts/EB Garamond_Regular.json', (font) => {
             newText(font, pages6, 'Why do', 0.3, 0.25, 0.055)
             newText(font, pages6, 'we', 0.55, -0.05, 0.055)
             newText(font, pages6, 'read?', 0.45, -0.35, 0.055)
