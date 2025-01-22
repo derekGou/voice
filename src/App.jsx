@@ -401,6 +401,44 @@ function App() {
           renderer.domElement.addEventListener('mousedown', onMouseDown);
           renderer.domElement.addEventListener('mousemove', onMouseMove);
           renderer.domElement.addEventListener('mouseup', onMouseUp);
+
+          let isDragging1 = false;
+          let previousMousePosition1 = { x: 0, y: 0 };
+
+          // Mouse down event for right click
+          window.addEventListener('mousedown', (event) => {
+              if (event.button === 2) { // Right-click (button 2)
+                  isDragging1 = true;
+              }
+          });
+
+          // Mouse move event for dragging
+          window.addEventListener('mousemove', (event) => {
+              if (isDragging1) {
+                  // Calculate mouse movement delta
+                  const deltaX = event.clientX - previousMousePosition1.x;
+                  const deltaY = event.clientY - previousMousePosition1.y;
+
+                  // Apply rotation based on mouse movement
+                  const rotationSpeed = 0.005;
+                  camera.rotation.y -= deltaX * rotationSpeed; // Rotate around Y axis
+                  camera.rotation.x -= deltaY * rotationSpeed; // Rotate around X axis
+
+                  // Update the previous mouse position
+                  previousMousePosition1 = { x: event.clientX, y: event.clientY };
+              }
+          });
+
+          // Mouse up event to stop dragging
+          window.addEventListener('mouseup', () => {
+              isDragging1 = false;
+          });
+
+          // To prevent the context menu from showing up on right click
+          window.addEventListener('contextmenu', (event) => {
+              event.preventDefault();
+          });
+
           window.addEventListener('wheel', (event) => {
             if (event.deltaY > 0) {
                 camera.position.z += 1;  // Zoom out
