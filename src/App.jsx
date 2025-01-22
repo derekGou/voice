@@ -23,7 +23,7 @@ function App() {
     refContainer.current && refContainer.current.appendChild(renderer.domElement);
 
     // Create a gradient background
-    const gradientPlaneGeometry = new THREE.PlaneGeometry(75, 75*window.innerHeight / window.innerWidth);
+    const gradientPlaneGeometry = new THREE.PlaneGeometry(75, 100*window.innerHeight / window.innerWidth);
     const gradientPlaneMaterial = new THREE.ShaderMaterial({
       uniforms: {
         color1: { value: new THREE.Color(0x110033) }, // Light blue
