@@ -159,13 +159,16 @@ function App() {
     var parts = new THREE.Group()
     scene.add(parts)
 
-    const light = new THREE.PointLight(0xffffff, 10);
-    light.position.set(0, 11, 2);
+    const light = new THREE.PointLight(0xffffff, 5);
+    light.position.set(0, 10, 0);
     scene.add(light);
     const blackHoleGeo = new THREE.SphereGeometry(1, 32, 32); // Radius 1, 32 width segments, 32 height segments
     const planetGeo = new THREE.SphereGeometry(0.5, 32, 32); // Radius 1, 32 width segments, 32 height segments
-    const blackHoleMat = new THREE.MeshBasicMaterial({
-      color: 0x000000
+    const blackHoleMat = new THREE.MeshStandardMaterial({
+      color: 0xfc9601,
+      emissive: 0xffffff66,
+      metalness: 0,
+      roughness: 1,
     });
     const planetMat1 = new THREE.MeshStandardMaterial({
       color: 0x478be7,
@@ -279,9 +282,9 @@ function App() {
           runOnce = false
           const loader = new FontLoader();
           loader.load('fonts/EB Garamond_Regular.json', (font) => {
-            newText(font, pages5, 'Is time', 0.3, 0.25, 0.055)
-            newText(font, pages5, 'travel', 0.36, -0.05, 0.055)
-            newText(font, pages5, 'possible?', 0.2, -0.35, 0.055)
+            newText(font, pages5, 'Will AI', 0.32, 0.25, 0.055)
+            newText(font, pages5, 'Outsmart', 0.25, -0.05, 0.055)
+            newText(font, pages5, 'us?', 0.6, -0.35, 0.055)
           });
         }
         pages4.rotation.y -= 0.02;
